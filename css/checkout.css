@@ -1,0 +1,208 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #b4b2b2;
+  }
+  
+/* loader */
+.loader {
+	position: fixed;
+  z-index: 99;
+  top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  background: #333333;
+  display: flex;
+  align-items: center;
+	justify-content: center;
+  column-gap: 5px;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+.loader.hidden{
+    animation: fadeOut 1s forwards;
+}
+.loader_dot{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #e8e7e7;
+    opacity: 0.5;
+    border-radius: 50%;
+    animation: scale-up 1000ms var(--d) linear infinite;  
+}
+@keyframes fadeOut {
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+@keyframes scale-up{
+    50%{
+        scale: 1.5;
+    }
+    100%{
+        opacity: 0;
+        scale: 1;
+        visibility: hidden;
+        
+    }
+}
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .error {
+    color: #ff0000;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Checkout Form Styles */
+  .checkout-form {
+    background: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+
+  .checkout-form h1 {
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: 10px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .form-actions {
+    margin-top: 25px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .btn-primary {
+    background-color: #4CAF50;
+  }
+  
+  .btn-secondary {
+    background-color: #666;
+  }
+  
+  .btn-primary:hover {
+    background-color: #45a049;
+  }
+
+  .btn-secondary:hover {
+    background-color: #333;
+  }
+  
+  /* Order Summary Styles */
+  .order-summary {
+    /* background-color: #b4b2b2; */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+  }
+  
+  .order-summary:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+  }
+
+  .order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+  }
+  
+  .order-summary th,
+  .order-summary td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .order-summary th {
+    background-color: #010101;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .order-summary img {
+    max-width: 60px;
+    height: auto;
+  }
+  
+  .order-summary tfoot tr {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .order-summary tfoot tr:last-child {
+    color: #4CAF50;
+  }
+  
+/* media queries */
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .checkout-form,
+    .order-summary {
+      padding: 20px;
+    }
+  
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-size: 14px;
+    }
+  
+    .order-summary th,
+    .order-summary td {
+      font-size: 14px;
+    }
+  
+    .order-summary img {
+      max-width: 40px;
+    }
+  }
